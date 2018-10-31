@@ -35,7 +35,10 @@ def main():
   position = [0., 0.5, 0.15]
   orientation = [0, 0, 0]
   color = [255, 0, 0]
-  cube = utils.generateCube(sim_client, 'cube', position, orientation, color)
+  size = [0.1, 0.1, 0.1]
+  mass = 1
+
+  cube = utils.generateCube(sim_client, 'cube', size, position, orientation, mass, color)
   time.sleep(2)
 
   # Get sensor data and display it

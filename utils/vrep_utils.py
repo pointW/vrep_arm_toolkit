@@ -51,8 +51,11 @@ def restartSimulation(sim_client):
 # NOTE: This requires your simulation to have the dummy 'remoteAPICommandServer' in 'simulation/sensor_example.ttt' in your simulation
 def generateCube(sim_client, name, size, position, orientation, mass, color=[255., 255., 255.]):
   cube_mesh_file = os.path.join(OBJECT_MESH_DIR, '4.obj')
-  sim_ret = vrep.simxCallScriptFunction(sim_client, 'remoteApiCommandServer', VREP_CHILD_SCRIPT, 'createShape',
-                                        [0], size + position + orientation + color + [mass], [name],
+  # sim_ret = vrep.simxCallScriptFunction(sim_client, 'remoteApiCommandServer', VREP_CHILD_SCRIPT, 'importShape',
+  #                                       [0], size + position + orientation + color + [mass], [cube_mesh_file, name],
+  #                                       bytearray(), VREP_BLOCKING)
+  sim_ret = vrep.simxCallScriptFunction(sim_client, 'remoteApiCommandServer', VREP_CHILD_SCRIPT, 'importShape',
+                                        [0], position + orientation + color + [mass], [cube_mesh_file, name],
                                         bytearray(), VREP_BLOCKING)
   if sim_ret[0] == 8:
     return None
