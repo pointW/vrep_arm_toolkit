@@ -2,10 +2,11 @@ import os
 import time
 import numpy as np
 
-from vrep_arm_toolkit.utils import transformations
-from vrep_arm_toolkit.simulation import vrep
+from utils import transformations
+from simulation import vrep
 
-OBJECT_MESH_DIR = '/home/colin/workspace/machine_learning_experiments/robotic_rl/vrep_arm_toolkit/simulation/objects/blocks/'
+# OBJECT_MESH_DIR = '/home/colin/workspace/machine_learning_experiments/robotic_rl/vrep_arm_toolkit/simulation/objects/blocks/'
+OBJECT_MESH_DIR = '/home/ur5/Software/vrep_arm_toolkit/simulation/objects/blocks/'
 
 VREP_BLOCKING = vrep.simx_opmode_blocking
 VREP_ONESHOT = vrep.simx_opmode_oneshot_wait

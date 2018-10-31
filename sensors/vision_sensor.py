@@ -1,8 +1,8 @@
 import sys
 import numpy as np
 
-from vrep_arm_toolkit.simulation import vrep
-import vrep_arm_toolkit.utils.vrep_utils as utils
+from simulation import vrep
+import utils.vrep_utils as utils
 
 VREP_BLOCKING = vrep.simx_opmode_blocking
 
